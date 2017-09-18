@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>React Rails Monolith</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title>Bright Spell</title>
   </head>
 
   <body>
+    <div id="grad">
+
+    <nav class="topnav" id="myTopnav">
+      <div class=navigation><%= link_to "Home", root_path %></div>
+      <% if user_signed_in? %>
+        <img class=profile_pic src="<%= current_user.profile_photo %>"></img>
+        <div class=username>Signed in as <%= current_user.email %></div>
+        <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+        <a href="/goals/new">Add New Goal</a>
+      <% else%>
+        <div class=signin>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Sign in", new_user_session_path %>
+        </div>
+      <%end%>
+    </nav>
+
+      <div class="hero-image">
+        <div class="hero-text">
+          <br />
+            <span>Bright</span><span>Spell</span>
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="app">
+
+
+    <%flash.each do |key, value|%>
+      <% if value.class == Array%>
+      <%value.each do |message|%>
+      <li class="errors"><%=message%></li>
+      <%end%>
+      <%else%>
+        <li class="errors"><%=value%></li>
+      </ul>
+    <%end%>
+    <%end%>
+
+
+
     <%= yield %>
+
+
+  </div>
+</div>
   </body>
 </html>
