@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Goal.destroy_all
+User.destroy_all
+Outcome.destroy_all
+User.create(first_name:'Kristen', last_name:'Jordan', email: 'kristlynne@gmail.com', username: 'kristlynne', password: 'password')
+goals_new= Goal.create(name: 'Vaporize trash island in Pacific', description: 'As you collect Karma points, the trash island shrinks before your eyes!', user: User.first)

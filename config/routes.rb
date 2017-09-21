@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'goals#index'
-  # devise_for :users
+
+
+  namespace :api do
+      namespace :v1 do
+        resources :goals, only: [:index, :show, :create, :destroy] do
+          end
+        end
+      end
 
 
   resources :goals
-    resources :outcomes, only: [:index]
+  resources :outcomes, only: [:index]
   end
