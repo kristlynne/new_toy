@@ -9,6 +9,8 @@ const GoalList = (props) => {
       <Goal
         key={goal.id}
         name={goal.name}
+        description={goal.description}
+        progress={goal.progress}
       />
     )
   })

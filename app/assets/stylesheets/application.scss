@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Abel);
+/*flex container */
+
+  .wrapper {
+display:flex;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,7 +17,7 @@ html {
 
 body {
   font-family: 'Abel', sans-serif;
-  margin: 0;
+  // margin: 0;
   background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
 }
 
@@ -47,62 +53,68 @@ img {
 }
 
 input {
-  padding:10px;
+  flex-direction: wrap;
+  padding:4px;
   border:0;
 }
 
-
-section, footer {
-  text-align: center;
-  background:rgba(0,0,0,0.2);
-  padding:20px;
-  margin:20px 0;
-  color:white;
-  font-weight: 100;
-}
+//
+// section, footer {
+//   text-align: center;
+//   background:rgba(0,0,0,0.2);
+//   padding:20px;
+//   margin:20px 0;
+//   color:white;
+//   font-weight: 100;
+// }
 
 /* Flex Container */
-.flex-nav ul {
-  border:1px solid black;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media all and (max-width:1000px) {
-
-}
-
-
-@media all and (max-width:500px) {
-  .flex-nav li {
-    -ms-flex-preferred-size:100%;
-        flex-basis:100%;
-  }
+// .flex-nav ul {
+//   border:1px solid black;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
+// //
+// @media all and (max-width:1000px) {
+//
+// }
+//
+//
+// @media all and (max-width:500px) {
+//   .flex-nav li {
+//     -ms-flex-preferred-size:100%;
+//         flex-basis:100%;
+//   }
 /*flex container */
-  .wrapper {
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
+  // .wrapper {
+  //   display:-webkit-box;
+  //   display:-ms-flexbox;
+  //   display:flex;
+  //   // -webkit-box-orient: vertical;
+  //   -webkit-box-direction: normal;
+  //       -ms-flex-direction: column;
+  //           flex-direction: column;
+  // }
 
 /*flex item, select all items of wrapper shorthand */
-  .wrapper > * {
-    -webkit-box-ordinal-group:10000;
-        -ms-flex-order:9999;
-            order:9999;
+  // .wrapper > * {
+  //   -webkit-box-ordinal-group:10000;
+  //       -ms-flex-order:9999;
+  //           order:9999;
+  //
+  // }
 
-  }
 
-  .toggleNav {
-    display:block;
-  }
-
-  .flex-nav ul {
-    display:none;
-  }
-}
+  // .create_goal {
+  //   flex-direction: wrap;
+  // }
+  //
+  // .toggleNav {
+  //   display: none;
+  // }
+  //
+  // .flex-nav ul {
+  //   display: nav;
+  // }
+// }

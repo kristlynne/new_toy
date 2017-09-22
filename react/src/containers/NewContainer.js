@@ -9,11 +9,14 @@ class NewContainer extends Component {
     super(props);
     this.state = {
       goals: [],
-      newGoal: ""
+      newGoalName: "",
+      newGoalDescription: ""
     }
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleTaskChange = this.handleTaskChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+
   }
 
   getGoals() {
@@ -30,16 +33,30 @@ class NewContainer extends Component {
     this.getGoals();
   }
 
-  handleTaskChange(event) {
-    this.setState({ newGoal: event.target.value })
+  handleNameChange(event) {
+    this.setState({ newGoalName: event.target.value })
+  }
+
+  handleDescriptionChange(event) {
+    this.setState({ newGoalDescription: event.target.value })
   }
 
   handleFormSubmit(event) {
     let goals = this.state.goals
+    let payload = JSON.stringify({
+      goal: {
+        name: this.state.newGoalName,
+        description: this.state.newGoalDescription
+      }
+    })
     event.preventDefault();
-    fetch('/api/v1/goals', {method: 'POST', credentials: 'same-origin', body: this.state.newGoal})
+    fetch('/api/v1/goals', {
+      method: 'POST',
+      credentials: 'same-origin',
+      body: payload
+    })
     .then(response => response.json())
-    .then(task => {
+    .then(goal => {
       let new_goal_list = goals.push(goal)
       this.setState(goals: new_goal_list)
     })
@@ -68,7 +85,8 @@ class NewContainer extends Component {
       <h1>Goal List</h1>
       {goals}
       <GoalForm
-        onChangeFunction={this.handleTaskChange}
+        nameChangeFunction={this.handleNameChange}
+        descriptionChangeFunction={this.handleDescriptionChange}
         handleFormSubmit={this.handleFormSubmit}
         content={this.state.newGoal}
       />
