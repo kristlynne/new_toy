@@ -5,21 +5,25 @@ import GoalList from '../components/GoalList';
 
 const GoalForm = (props) => {
   return (
-    <form className='create_goal' onSubmit={props.handleFormSubmit}>
-        <input type='text'
-          placeholder='name'
-          name={props.name}
-          onChange={props.nameChangeFunction}
-          value={props.content}
-        />
-        <input type='text'
-          placeholder='description'
-          description={props.description}
-          onChange={props.descriptionChangeFunction}
-          value={props.content}
-        />
-        <input className="button" type="submit" value="Add Goal" />
-    </form>
+    <div className='wrapper'>
+      <form className='create_goal' onSubmit={props.handleFormSubmit}>
+          <input type='text'
+            placeholder='name'
+            name={props.name}
+            onChange={props.nameChangeFunction}
+            value={props.content}
+          />
+          <br />
+          <input type='text'
+            placeholder='description'
+            description={props.description}
+            onChange={props.descriptionChangeFunction}
+            value={props.content}
+          />
+          <br />
+          <input className="goalSubmit" type="submit" value="Add Goal" />
+        </form>
+    </div>
   );
 }
 

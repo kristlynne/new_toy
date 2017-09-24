@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   namespace :api do
       namespace :v1 do
-        resources :goals, only: [:index, :show, :create, :update, :destroy] do
+        resources :goals do
           end
         end
       end
 
 
-  resources :goals
-  resources :outcomes, only: [:index]
+  resources :goals, to: 'goals#index'
+  resources :outcomes, only: [:index], to: 'goals#index'
   end

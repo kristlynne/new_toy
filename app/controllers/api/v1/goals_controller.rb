@@ -16,5 +16,19 @@ class Api::V1::GoalsController < ApplicationController
     #return the json of the newly created goal
   end
   def update
-  end   
+    update_today = Goal.find(params[:id])
+    id = update_today.id
+    newProgress = request.body.read.to_i
+    update_today.progress = newProgress
+    update_today.save
+    progress = update_today.progress
+
+    data = {
+      name: name,
+      description: description,
+      progress: update_today.progress
+    }
+
+    render json: data
+  end
 end

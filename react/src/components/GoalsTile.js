@@ -4,12 +4,13 @@ import { Link, browserHistory } from 'react-router';
 const GoalsTile = props => {
 
   return(
-    <div>
-      <h1>{props.name}</h1>
-      <h3>{props.description}</h3>
-      <h3>{props.progress}</h3>
-
-    </div>
+    <Link to={`/goals/${props.id}/edit`}>
+      <div className='tile'>
+        <h2>{props.name}</h2>
+        <h2>{props.description}</h2>
+        <h3>{props.progress} days </h3>
+      </div>
+    </Link>
   )
 }
 

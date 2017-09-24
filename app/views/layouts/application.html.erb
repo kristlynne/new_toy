@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bright Spell</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Bright Spell</title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application' %>
-  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
+    </head>
 
-  <body>
+    <body>
 
       <div class="Home"><%= link_to "Home", root_path %></div>
       <% if user_signed_in? %>
-        <div class=username>Signed in as <%= current_user.email %></div>
-        <div class=signin><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
-      <% else%>
-        <div class=signin>
-          <%= link_to "Sign Up", new_user_registration_path %>
-          <%= link_to "Sign in", new_user_session_path %>
-        </div>
+        <div class=signin><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div
         <nav class="background">
           <div class="body">
         </div>
@@ -28,19 +22,8 @@
       <%end%>
 
 
-    <%flash.each do |key, value|%>
-      <% if value.class == Array %>
-      <%value.each do |message|%>
-      <li class="errors"><%=message%></li>
-      <%end%>
-      <%else%>
-        <li class="errors"><%=value%></li>
-      </ul>
-    <%end%>
-    <%end%>
-
-
-
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
     <%= yield %>
 
   </div>
