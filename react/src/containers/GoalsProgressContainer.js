@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {browserHistory, Link } from 'react-router';
-// import Counter from '../components/Counter';
+import Counter from '../components/Counter';
 import GoalsTile from '../components/GoalsTile';
 import GoalsContainer from '../containers/GoalsContainer';
 
@@ -27,7 +27,6 @@ class GoalsProgressContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        debugger;
         this.setState({
           goal: body
         })
@@ -57,9 +56,12 @@ class GoalsProgressContainer extends Component {
   })
 }
   render() {
-    debugger;
     return(
       <div className='goal progress'>
+        <Counter
+          progress={this.state.goal.progress}
+          percent={""}
+        />
         <h1>Great job! Keep it up! </h1>
         <div className='tile'>
           <h2>{this.state.goal.name}</h2>
