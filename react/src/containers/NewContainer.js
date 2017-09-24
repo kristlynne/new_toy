@@ -75,8 +75,11 @@ class NewContainer extends Component {
     let goals = this.state.goals.map(goal => {
       return (
         <GoalsTile
+          id={goal.id}
           key={goal.id}
           name={goal.name}
+          description={goal.description}
+          progress={goal.progress}
         />
       )
     })

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GoalsTile from '../components/GoalsTile';
 import {browserHistory, Link } from 'react-router';
+import GoalsProgressContainer from '../containers/GoalsProgressContainer';
+// this is your index page after sign in
 
 class GoalsContainer extends Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class GoalsContainer extends Component {
     let goalsComponents = this.state.goals.map(goal => {
     return (
       <div className='container'>
-        <h1>Welcome! Here are your goals</h1>
           <GoalsTile
             key={goal.id}
             id={goal.id}
@@ -47,7 +48,7 @@ class GoalsContainer extends Component {
   })
   return(
     <div>
-      <p>Make a good choice.</p>
+      <h1>Welcome! Here are your goals.</h1>
       {goalsComponents}
       <Link to={`/goals/new`} >Add a New Goal </Link>
     </div>
