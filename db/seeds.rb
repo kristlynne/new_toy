@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Goal.destroy_all
 User.destroy_all
-User.create(first_name:'Kristen', last_name:'Jordan', email: 'kristlynne@gmail.com', username: 'kristlynne', password: 'password')
-goals_new= Goal.create(name: 'Vaporize trash island in Pacific', description: 'As you collect Karma points, the trash island shrinks before your eyes!', user: User.first)
+# User.create(first_name:'Kristen', last_name:'Jordan', email: 'kristlynne@gmail.com', username: 'kristlynne', password: 'password')
+# goals_new= Goal.create(name: 'Vaporize trash island in Pacific', description: 'As you collect Karma points, the trash island shrinks before your eyes!', user: User.first)

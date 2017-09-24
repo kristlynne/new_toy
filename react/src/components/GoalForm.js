@@ -22,7 +22,7 @@ const GoalForm = (props) => {
           />
           <br />
           <input className="goalSubmit" type="submit" value="Add Goal" />
-        </form>
+      </form>
     </div>
   );
 }
