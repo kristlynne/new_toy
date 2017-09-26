@@ -1,6 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Abel);
 /*flex container */
 
+img {
+  display:flex;
+  border:10px solid mistyrose;
+  width: 540px;
+  flex-direction:column;
+  padding-bottom:0px;
+
+}
+
   .wrapper {
 display:flex;
 flex-direction: column;
@@ -22,9 +31,10 @@ html {
 }
 
 body {
+  color: #e8e792;
   font-family: 'Abel', sans-serif;
-  // margin: 0;
-  background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+  font-size: 10mm;
+  background-image: linear-gradient(320deg, #e8e792 0%, #e16058 100%);
 }
 
 
@@ -34,7 +44,7 @@ align-items:row;
 }
 
 a {
-  color:white;
+  color: #203e4a;
   font-weight: 100;
   letter-spacing: 2px;
   text-decoration: none;
@@ -55,9 +65,6 @@ a:hover {
   display: none;
 }
 
-img {
-  width:100%;
-}
 
 .wrapper {
   max-width: 1000px;
@@ -70,63 +77,23 @@ input {
   border:0;
 }
 
-//
-// section, footer {
-//   text-align: center;
-//   background:rgba(0,0,0,0.2);
-//   padding:20px;
-//   margin:20px 0;
-//   color:white;
-//   font-weight: 100;
-// }
+.tile {
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  align-content:start;
+  flex-wrap:wrap;
+  justify-content:center;
+  color: #3c768c;
+  font-family: 'Abel', sans-serif;
+  font-size: 10mm;
 
-/* Flex Container */
-// .flex-nav ul {
-//   border:1px solid black;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-// }
-// //
-// @media all and (max-width:1000px) {
-//
-// }
-//
-//
-// @media all and (max-width:500px) {
-//   .flex-nav li {
-//     -ms-flex-preferred-size:100%;
-//         flex-basis:100%;
-//   }
-/*flex container */
-  // .wrapper {
-  //   display:-webkit-box;
-  //   display:-ms-flexbox;
-  //   display:flex;
-  //   // -webkit-box-orient: vertical;
-  //   -webkit-box-direction: normal;
-  //       -ms-flex-direction: column;
-  //           flex-direction: column;
-  // }
+}
 
-/*flex item, select all items of wrapper shorthand */
-  // .wrapper > * {
-  //   -webkit-box-ordinal-group:10000;
-  //       -ms-flex-order:9999;
-  //           order:9999;
-  //
-  // }
+.container {
+  color:#F7FF70;
+}
 
-
-  // .create_goal {
-  //   flex-direction: wrap;
-  // }
-  //
-  // .toggleNav {
-  //   display: none;
-  // }
-  //
-  // .flex-nav ul {
-  //   display: nav;
-  // }
-// }
+.hold {
+  color:#3c768c;
+}

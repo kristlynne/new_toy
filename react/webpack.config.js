@@ -12,11 +12,17 @@ var config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(gif)$/,
+        loader: 'file-loader?name=/app/assets/images/[name].[ext]'
       }
     ]
   },
   devtool: 'eval-source-map'
 }
+
+
 
 if (process.env.NODE_ENV === 'production') {
   delete config.devtool;

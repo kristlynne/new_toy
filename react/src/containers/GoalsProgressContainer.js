@@ -33,11 +33,12 @@ class GoalsProgressContainer extends Component {
       })
   }
 
-  changeAmount(amountPayload) {
-  fetch(`/api/v1/goals/${this.props.params.id}/edit`, {
+  changeAmount() {
+    // let amountPayload = this.state.goal.progress + 1
+  fetch(`/api/v1/goals/${this.props.params.id}`, {
     credentials: 'same-origin',
     method: 'PATCH',
-    body: JSON.stringify(amountPayload)
+    // body: JSON.stringify(amountPayload)
   })
   .then(response => {
     if (response.ok) {
@@ -57,17 +58,15 @@ class GoalsProgressContainer extends Component {
 }
   render() {
     return(
-      <div className='goal progress'>
+      <div className='tile' >
         <Counter
           progress={this.state.goal.progress}
-          percent={""}
+          handleClick={this.changeAmount}
         />
-        <h1>Great job! Keep it up! </h1>
-        <div className='tile'>
-          <h2>{this.state.goal.name}</h2>
-          <h2>{this.state.goal.description}</h2>
-          <h3>{this.state.goal.progress} days </h3>
-        </div>
+        <h3>Great job! Keep it up! </h3>
+        <h3>{this.state.goal.name}</h3>
+        <h3>{this.state.goal.description}</h3>
+        <h3>{this.state.goal.progress} days </h3>
       </div>
     )
   }
