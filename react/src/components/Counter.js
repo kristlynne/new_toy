@@ -2,53 +2,36 @@ import React, {Component} from 'react';
 import GoalsContainer from '../containers/GoalsContainer';
 import GoalsProgressContainer from '../containers/GoalsProgressContainer';
 
-class Counter extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      amount: this.props.progress,
-      lastPercent: this.props.percent,
-      percent: null,
-      error: "",
-      percentCounter: ""
-    }
-    this.handleAdd = this.handleAdd.bind(this)
-    // this.handleSubtract = this.handleSubtract.bind(this)
-  }
 
-  componentDidMount() {
-    let percent = Math.round((this.state.amount / this.state.daily) * 100)
-    this.setState({percent: percent})
-  }
+const Counter = (props) => {
 
-  handleAdd(event) {
-    let newAmount = this.state.amount + 1
-    let amountPayload = newAmount
-    this.props.changeAmount(amountPayload)
-    let percent = Math.round((newAmount / this.state.progress) * 100)
-    this.setState({amount: newAmount})
-    this.setState({lastPercent: this.state.percent})
-    this.setState({percent: percent})
-  }
-
-  render() {
     let goalReachAlert = ""
-    if (this.state.amount >= this.props.dailyGoal) {
+    if (props.progress >= 10) {
       goalReachAlert = "Congrats! You've reached your goal!"
     }
-    return(
-      <div className='counter'>
-      <h2>Did you reach your goal today? </h2>
-        <div className='add'>
-          <i onClick={this.handleAdd}></i>
-        </div>
-      <h2> {this.state.metric} </h2>
-        <p> {this.state.error} </p>
-        <h3> {goalReachAlert} </h3>
-        <h4> Progress: {this.state.percentCounter}% </h4>
+
+    let gifs = [
+      "https://i.imgur.com/wHcn8He.gif",
+      "https://i.imgur.com/sPNGuqN.gif",
+      "https://i.imgur.com/8GnZpJi.gif",
+      "https://i.imgur.com/O5BS24J.gif",
+      "https://i.imgur.com/MfwoTEh.gif"
+    ]
+
+    let index = Math.min(Math.floor(props.progress/2.5), 4)
+    let gif = gifs[index]
+    return (
+      <div className='tile'>
+          <h1>Did you reach your goal today?</h1>
+        <button onClick={props.handleClick}>
+          YES!
+        </button>
+          <h3> {goalReachAlert} </h3>
+        <img src={gif} />
       </div>
-    )
-  }
+    );
 }
+
+
 
 export default Counter;

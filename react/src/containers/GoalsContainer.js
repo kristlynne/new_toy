@@ -47,8 +47,10 @@ class GoalsContainer extends Component {
     )
   })
   return(
-    <div>
-      <h1>Welcome! Here are your goals.</h1>
+    <div className='container'>
+      <h1>BrightSpell </h1>
+      <h2>The future is bright! </h2>
+      <h2>Here are your goals.</h2>
       {goalsComponents}
       <Link to={`/goals/new`} >Add a New Goal </Link>
     </div>

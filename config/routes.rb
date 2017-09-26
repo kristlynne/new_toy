@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
 
   resources :goals, to: 'goals#index'
-  resources :outcomes, only: [:index], to: 'goals#index'
+  resources :progress, only: [:index], to: 'goals#index'
   end
