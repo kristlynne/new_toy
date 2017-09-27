@@ -1,7 +1,7 @@
 class Api::V1::GoalsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    render json: Goal.all
+    render json: Goal.where(user: current_user)
   end
   def show
     render json: Goal.find(params[:id])
