@@ -9,7 +9,7 @@
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "test": "node_modules/.bin/karma start karma.conf.js",
-    "start": "npm run webpack -- --watch",
+    "start": "yarn run webpack -- --watch",
     "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
   },
   "author": "Ivan Lasorsa",
