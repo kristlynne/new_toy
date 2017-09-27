@@ -1,4 +1,4 @@
-# README
+# README Cool beans
 
 This repository has all the code necessary for starting a React on Rails application
 including testing. To get started, just clone the repository down and get started using
