@@ -26,4 +26,12 @@ class Api::V1::GoalsController < ApplicationController
     }
     render json: body
   end
+
+  def destroy
+    goal = Goal.find(params[:id])
+    if :user == current_user
+      goal.destroy
+      redirect_to 'goals#index'
+    end
+  end
 end

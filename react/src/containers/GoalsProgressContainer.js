@@ -12,6 +12,7 @@ class GoalsProgressContainer extends Component {
       goal: {}
     }
     this.changeAmount = this.changeAmount.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -32,6 +33,17 @@ class GoalsProgressContainer extends Component {
         })
       })
   }
+
+    handleDelete() {
+      fetch(`/api/v1/goals/${this.props.params.id}`, {
+        method: 'DELETE',
+        credentials: 'same-origin'
+      })
+      .then(response => response.json())
+      .catch((thing) => console.log("so sad"))
+      browserHistory.push('/');
+      // this.setState({goal: this.state.goal.filter(goal => body.id !== goalId)})
+    }
 
   changeAmount() {
     // let amountPayload = this.state.goal.progress + 1
@@ -62,6 +74,7 @@ class GoalsProgressContainer extends Component {
         <Counter
           progress={this.state.goal.progress}
           handleClick={this.changeAmount}
+          deleteButton={this.handleDelete}
         />
         <h3>Great job! Keep it up! </h3>
         <h3>{this.state.goal.name}</h3>

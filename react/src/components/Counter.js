@@ -4,7 +4,9 @@ import GoalsProgressContainer from '../containers/GoalsProgressContainer';
 
 
 const Counter = (props) => {
-
+    let handleDelete = () =>{
+      props.deleteButton(props.id)
+    }
     let goalReachAlert = ""
     if (props.progress >= 10) {
       goalReachAlert = "Congrats! You've reached your goal!"
@@ -28,6 +30,9 @@ const Counter = (props) => {
         </button>
           <h3> {goalReachAlert} </h3>
         <img src={gif} />
+        <button onClick={handleDelete}>
+          Delete Goal
+        </button>
       </div>
     );
 }
