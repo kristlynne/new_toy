@@ -25,12 +25,12 @@ const Counter = (props) => {
     return (
       <div className='tile'>
           <h1>Did you reach your goal today?</h1>
-        <button onClick={props.handleClick}>
+        <button className='btn' onClick={props.handleClick}>
           YES!
         </button>
           <h3> {goalReachAlert} </h3>
         <img src={gif} />
-        <button onClick={handleDelete}>
+        <button className='btn' onClick={handleDelete}>
           Delete Goal
         </button>
       </div>

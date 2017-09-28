@@ -12,7 +12,10 @@ class GoalsContainer extends Component {
     }
   }
   componentDidMount(){
-    fetch('/api/v1/goals')
+    fetch('/api/v1/goals', {
+      method: 'GET',
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response.json();
@@ -23,6 +26,7 @@ class GoalsContainer extends Component {
       }
     })
     .then(body => {
+
      this.setState({
        goals: body
      })
