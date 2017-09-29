@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Abel);
+@import url(https://fonts.googleapis.com/css?family=Calligraffitti);
 /*flex container */
 
 img {
@@ -31,7 +32,7 @@ html {
 }
 
 body {
-  color: #e8e792;
+  color: #FFFE68;
   font-family: 'Abel', sans-serif;
   font-size: 10mm;
   background-image: linear-gradient(320deg, #e8e792 0%, #e16058 100%);
@@ -47,10 +48,10 @@ color:#18b0c2;
 
 input[type="text"]
 {
-  background: mistyrose;
+  background: transparent;
   border:2px dotted #18b0c2 ;
   border-radius:15px;
-  
+
 }
 
 a {
@@ -101,7 +102,8 @@ input {
 }
 
 .container {
-  color:#F7FF70;
+  color:#e8e792;
+  font-family:'Calligraffitti', cursive;
 }
 
 .hold {
@@ -114,6 +116,13 @@ input {
   color:mistyrose;
   background: #18b0c2;
   font-size-adjust: auto;
+}
+
+.form_field {
+  border:2px dotted #18b0c2;
+  border-radius:15px;
+  color:mistyrose;
+  background: transparent;
 }
 
 //

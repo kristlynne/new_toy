@@ -62,12 +62,18 @@ class GoalsContainer extends Component {
     )
   })
   return(
-    <div className='container'>
-      <h1>BrightSpell </h1>
-      <h2>The future is bright! </h2>
-      <h2>Here are your goals.</h2>
-      {goalsComponents}
-      <Link to={`/goals/new`} >Add a New Goal </Link>
+    <div>
+      <div className='container'>
+        <h1>BrightSpell </h1>
+      </div>
+      <div className='body'>
+        <h2>The future is bright! </h2>
+      </div>
+      <div className='tile'>
+        <h2>Here are your goals.</h2>
+      </div>
+        {goalsComponents}
+        <Link to={`/goals/new`} >Add a New Goal </Link>
     </div>
     )
   }
