@@ -21,7 +21,7 @@ const GoalForm = (props) => {
             value={props.content}
           />
           <br />
-          <input className="goalSubmit" type="submit" value="Add Goal" />
+          <input className="btn" type="submit" value="Add Goal" />
       </form>
     </div>
   );

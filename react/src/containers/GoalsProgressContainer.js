@@ -39,17 +39,15 @@ class GoalsProgressContainer extends Component {
         method: 'DELETE',
         credentials: 'same-origin'
       })
-      .then(response => response.json())
-      .catch((thing) => console.log("so sad"))
-      browserHistory.push('/');
+      (browserHistory.push('/'))
       // this.setState({goal: this.state.goal.filter(goal => body.id !== goalId)})
-    }
+    };
 
   changeAmount() {
     // let amountPayload = this.state.goal.progress + 1
   fetch(`/api/v1/goals/${this.props.params.id}`, {
-    credentials: 'same-origin',
-    method: 'PATCH',
+      method: 'PATCH',
+      credentials: 'same-origin'
     // body: JSON.stringify(amountPayload)
   })
   .then(response => {

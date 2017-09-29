@@ -10,29 +10,40 @@ class GoalsContainer extends Component {
     this.state = {
       goals: []
     }
-  }
-  componentDidMount(){
-    fetch('/api/v1/goals', {
-      method: 'GET',
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        let errorMessage = `${response.status} ${response.statusText}`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(body => {
 
-     this.setState({
-       goals: body
-     })
+    this.getGoals = this.getGoals.bind(this)
+  }
+
+ getGoals() {
+   fetch('/api/v1/goals', {
+     method: 'GET',
+     credentials: 'same-origin'
    })
-   .catch(error => console.error(`Error in fetch: ${error.message}`));
+   .then(response => {
+     if (response.ok) {
+       return response.json();
+     } else {
+       let errorMessage = `${response.status} ${response.statusText}`,
+           error = new Error(errorMessage);
+       throw(error);
+     }
+   })
+   .then(body => {
+    this.setState({
+      goals: body
+    })
+  })
+  .catch(error => console.error(`Error in fetch: ${error.message}`));
  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    this.getGoals();
+    return true;
+  }
+
+  componentDidMount(){
+    this.getGoals();
+  }
 
 
   render() {
