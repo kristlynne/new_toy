@@ -85,7 +85,6 @@ class NewContainer extends Component {
     })
     return(
     <div className="goalList">
-      <h1>Goal List</h1>
       {goals}
       <GoalForm
         nameChangeFunction={this.handleNameChange}

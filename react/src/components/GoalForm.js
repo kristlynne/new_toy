@@ -6,7 +6,7 @@ import GoalList from '../components/GoalList';
 const GoalForm = (props) => {
   return (
     <div className='wrapper'>
-      <form className='create_goal' onSubmit={props.handleFormSubmit}>
+      <form onSubmit={props.handleFormSubmit}>
           <input type='text'
             placeholder='name'
             name={props.name}

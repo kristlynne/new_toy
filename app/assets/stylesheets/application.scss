@@ -41,6 +41,16 @@ body {
 .form-inputs {
 display:flex;
 align-items:row;
+color:#18b0c2;
+
+}
+
+input[type="text"]
+{
+  background: mistyrose;
+  border:2px dotted #18b0c2 ;
+  border-radius:15px;
+  
 }
 
 a {
@@ -103,7 +113,17 @@ input {
   border-radius:15px;
   color:mistyrose;
   background: #18b0c2;
+  font-size-adjust: auto;
 }
+
+//
+// .actions {
+//   border:2px dotted mistyrose;
+//   border-radius:15px;
+//   color:mistyrose;
+//   background: #18b0c2;
+// }
+
 //
 // .border {
 //   border:2px dotted mistyrose;
