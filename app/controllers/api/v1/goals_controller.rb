@@ -29,9 +29,7 @@ class Api::V1::GoalsController < ApplicationController
 
   def destroy
     goal = Goal.find(params[:id])
-    if :user == current_user
       goal.destroy
-      redirect_to 'goals#index'
-    end
+      redirect_to goals_path
   end
 end

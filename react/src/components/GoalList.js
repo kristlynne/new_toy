@@ -15,7 +15,7 @@ const GoalList = (props) => {
     )
   })
   return (
-    <ul>
+    <ul className='border'>
       {goals}
     </ul>
   );
