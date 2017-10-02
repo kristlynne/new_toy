@@ -8,6 +8,4 @@
 Goal.destroy_all
 User.destroy_all
 User.create(first_name:'Kristen', last_name:'Jordan', email: 'kristlynne@gmail.com', username: 'kristlynne', password: 'password')
-goals_new= Goal.create(name: 'trash island in Pacific', description: 'As you collect Karma points, the trash islayour eyes!', user: User.first)
-goals_new= Goal.create(name: 'Vaporize land in Pacific', description: 'As you collect Karma points, the trash island shrinks before your eyes!', user: User.first)
-goals_new= Goal.create(name: ' trash island in Pacific', description: 'As you collect Karma points, the trash before your eyes!', user: User.first)
+goals_new= Goal.create(name: 'Vaporize trash island in Pacific', description: 'As you collect Karma points, the trash island shrinks before your eyes!', user: User.first)

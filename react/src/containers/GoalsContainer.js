@@ -63,14 +63,42 @@ class GoalsContainer extends Component {
   })
   return(
     <div>
-      <div className='container'>
+      <div className='Sparkle'>
         <h1>BrightSpell </h1>
       </div>
       <div className='body'>
         <h2>The future is bright! </h2>
       </div>
+        <div id="fullpage">
+  <div className="section">
+    <p id="info"></p>
+    <div className="time-circle">
+      <div className="sun"></div>
+      <div className="moon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className="stars">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className="water"></div>
+    </div>
+    {/* <div id="intro-text">
+    </div> */}
+    {/* <div id="switch">
+      <div id="circle"></div>
+    </div> */}
+  </div>
+</div>
       <div className='tile'>
-        <h2>Here are your goals.</h2>
+        <h2>Here are your goals:</h2>
       </div>
         {goalsComponents}
         <Link to={`/goals/new`} >Add a New Goal </Link>
