@@ -1,4 +1,4 @@
-# README HI
+# README 
 
 https://brightspell.herokuapp.com/
 
