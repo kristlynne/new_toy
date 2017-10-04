@@ -1,21 +1,43 @@
-# README Cool beans
+# README HI
 
-This repository has all the code necessary for starting a React on Rails application
-including testing. To get started, just clone the repository down and get started using
-React on Rails like you normally would.
+https://brightspell.herokuapp.com/
 
-## Areas in the Boilerplate to Update
-Be sure to search `boilerplate` within your project and update any references to
-boilerplate with the name of your application. If you do not follow this step, your
-application may not behave the way that you expect it to.
 
-## Ideas for Getting Started
-Potential places to start for a side project:
-* Find an API that interests you and display the information in an interesting way
-* Make a clone of a website that already exists
-* Make a game that users can play on a website
-* Extend an assignment that you've already done to add additional features
+BrightSpell
 
-No idea is too small, weird or insignificant to get started with. If you're interested
-in the project, you'll keep working on it and learn a lot about coding. Download the
-boilerplate, make those first commits and enjoy!
+Bright Spell is a sustainable living application, which allows users to set their own goals and track progress on those goals from day to day. Animations evolve along with user progress. Built in Ruby on Rails with React, Flex-box and SCSS for front-end.
+Climate change is such a massive problem that many individuals feel overwhelmed and powerless to prevent it. This app was designed to bring sustainable living back into the personal scope of daily life. Rewards in the form of animations bring in a game quality, positively reinforcing milestones along the way.
+
+
+Getting Started
+
+Please clone this repo down to your machine.  Before you start the server, be sure to 'bundle install'  and 'npm install' from your terminal to make sure all gems and node modules are up-to-date and configured properly.  Also use 'rake db:create' to generate a postGres database on your local machine.  Then run 'db:migrate' to create necessary tables.
+
+Installing
+
+This app requires the installation of multiple gems and dependencies.  Please see Gemfile. Always check for deprecations or new versions of software/gems.
+
+Deployment
+
+This app is build on a Ruby-On-Rails framework, use the command 'rails s' to launch the app from your terminal onto your local server. In a separate terminal tab, use the command 'npm start'.
+
+Built With
+
+ruby
+rails
+react
+postgresQL
+
+
+
+Authors
+
+Kristen Jordan
+
+Contributors who participated on this project:
+
+Kylee Acker
+David MacMurtie
+Sebastian Kopp
+
+Lots of help from fellow Launchers at the Philly 3 Launch Academy cohort
