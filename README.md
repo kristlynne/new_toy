@@ -1,6 +1,6 @@
-# README 
+# README
 
-https://brightspell.herokuapp.com/
+https://bright-spell.herokuapp.com/
 
 
 BrightSpell
