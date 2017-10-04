@@ -31,7 +31,7 @@ feature 'user visits goals index page' do
     visit root_path
     click_link post.title
 
-  expect(page).to_not have_button("Delete This Post")
+  expect(page).to_not have_button("Delete")
 
   end
 end
